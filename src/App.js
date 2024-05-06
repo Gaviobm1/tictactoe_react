@@ -54,7 +54,7 @@ export default function Game() {
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className='game-info'>
-        <button onClick={reverseList}>Sort Moves</button>
+        <button onClick={reverseList} className='sort-moves'>Sort Moves</button>
         <ul>
           {reverseMoves()}
         </ul>

@@ -74,6 +74,11 @@ li + li {
 .status {
   margin-bottom: 10px;
 }
+
+.sort_moves {
+  align-self: flex-start;
+}
+
 .game {
   display: flex;
   width: min(70%, 1128px);
@@ -98,6 +103,7 @@ li + li {
 }
 
 .game-info {
+  align-self: flex-start;
   gap: 2rem;
 }
 
