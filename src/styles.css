@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Maps&family=Rubik+Mono+One&family=Rubik+Scribble&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-size: clamp(1.4rem, 1.5vw, 2rem);
+}
+
+body {
+  font-family: 'Rubik Mono One', sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  width: min(80%, 200px);
+  font-family: 'Rubik', sans-serif;
+  background-color: slateblue;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgb(0, 0, 0, 0.2);
+  margin: auto;
+  font-size: clamp(1rem, 1.5vw, 2rem);
+}
+
+li + li {
+  margin-top: 0.5rem;
+}
+
+.status {
+  font-size: clamp(0.8rem, 2vw, 3rem);
+}
+
+.square {
+  background: #fff;
+  color: black;
+  border: 1px solid #999;
+  border-radius: 0;
+  box-shadow: none;
+  float: left;
+  font-family: 'Rubik Maps', sans-serif;
+  font-size: clamp(1.5rem, 6vw, 3rem);
+  height: clamp(70px, 9vw, 150px);
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: clamp(70px, 9vw, 150px);
+}
+
+.board-row:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+.game {
+  display: flex;
+  width: min(70%, 1128px);
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.status + .board-row {
+  margin-top: 1rem;
+}
+
+.game-board, .game-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.game-board {
+  align-self: flex-start;
+}
+
+.game-info {
+  gap: 2rem;
+}
+
+.win {
+  animation: win-border infinite 1000ms ease-in-out alternate;
+}
+
+@keyframes win-border {
+  0% {
+    border: 2px solid blue;
+  }
+  100% {
+    border: 6px solid green;
+  }
+}
+
+@media (max-width: 600px) {
+  .game {
+    flex-direction: column;
+  }
+
+  .game-board, .game-info {
+    width: 100%;
+  }
+}
